@@ -19,8 +19,9 @@ public:
     void insert(const int &,const int &);
     void erase(const int &);
     int operator[](const int &);
-    friend MyVector operator+(MyVector &,MyVector &);
+    friend MyVector operator+(MyVector &,MyVector&);
     virtual ~MyVector();
+
 
 };
 

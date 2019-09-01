@@ -58,7 +58,7 @@ void MyVector::pop_back() {
 void MyVector::insert(const int &position, const int &value) {
     data[position]=value;
     if (position>c_elemen-1)
-        throw ("fuera de limite");
+        throw std::out_of_range("fuera de limite");
 }
 
 void MyVector::erase(const int &position) {
@@ -66,14 +66,12 @@ void MyVector::erase(const int &position) {
     int *temp = new int[c_elemen - 1];
 
     // 2. Transferir los datos a temp
-    for(int i = 0; i < c_elemen; ++i) {
-        if (i == position) {}
-        else {
-            temp[i] = data[i];
-        }
-    }
+    for(int i = 0; i < position; ++i)
+        temp[i]=data[i];
+    for(int i = position+1; i < c_elemen; ++i)
+        temp[i-1]=data[i];
 
-    // 3. Borrar memoria anterior
+        // 3. Borrar memoria anterior
     delete [] data;
 
     // 4. Apuntando a memoria actual
@@ -91,15 +89,13 @@ MyVector::~MyVector() {
     delete [] data;
 }
 
-MyVector operator+(MyVector &v1, MyVector &v2){
-    // 1. Crear vector
-    MyVector v3(v1.size()+v2.size());
-    // 2. Transferir los datos a v3
-    for(int i = 0; i <v1.size(); i++)
-        v3.push_back(v1[i]);
-
-    for (int i=v1.size();i<v2.size()+v1.size();i++)
-        v3.push_back((v2[i]));
-
-    return v3;
+MyVector operator+(MyVector & v1,MyVector& v2){
+    MyVector temp;
+    for (int i=0;i<v1.size();i++){
+        temp.push_back(v1[i]);
+    }
+    for (int i=0;i<v2.size();i++)
+        temp.push_back(v2[i]);
+    return temp;
 }
+

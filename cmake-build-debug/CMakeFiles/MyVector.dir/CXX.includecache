@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/mauri/CLionProjects/MyVector/MyVector.h
-
-C:/Users/mauri/CLionProjects/MyVector/main.cpp
-iostream
--
-cassert
--
+C:/Users/mauri/Documents/GitHub/unidad-1-myvector-mauricio-rodriguez/MyVector.cpp
 MyVector.h
-C:/Users/mauri/CLionProjects/MyVector/MyVector.h
+C:/Users/mauri/Documents/GitHub/unidad-1-myvector-mauricio-rodriguez/MyVector.h
+stdexcept
+-
+exception
+-
+
+C:/Users/mauri/Documents/GitHub/unidad-1-myvector-mauricio-rodriguez/MyVector.h
 
